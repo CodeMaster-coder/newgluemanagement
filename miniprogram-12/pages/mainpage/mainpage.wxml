@@ -1,0 +1,70 @@
+<!--pages/mainpage/mainpage.wxml-->
+<!--
+1text相当于web中的span标签-->
+<view class='bc_img'>
+    <image src="https://i.loli.net/2021/05/10/6dXx8RNPtzZB5OG.jpg" class="bc_img"></image>
+</view>
+<view class="mainBox">
+<view class="firstLine">
+<view class="inventory" bindtap="inventorypage">
+    <!-- <navigator url="/pages/inventory/inventory"> -->
+    <image src="https://i.loli.net/2021/05/10/5ryYpPICWn6ewOo.png" class="storage-img">
+        </image>
+        <view class="title">
+        胶水入库
+        </view>
+    <!-- </navigator> -->
+</view>
+<view class="inventory">
+    <navigator url="/pages/navtohistory/navtohistory">
+    <image src="https://i.loli.net/2021/05/10/65FlmkifSjVBbA2.png" class="storage-img">
+        </image>
+        <view class="title">
+        领用更换回收
+        </view>
+    </navigator>
+</view>
+</view>
+
+<view class="secondLine">
+<view class="inventory">
+    <navigator url="/pages/storageview/storageview">
+    <image src="https://i.loli.net/2021/06/01/fHgEPNlTQLWwq3A.png" class="storage-img">
+        </image>
+        <view class="title">
+        库存查看
+        </view>
+    </navigator>
+</view>
+<view class="inventory" bindtap="overdue">
+    <image src="https://s2.loli.net/2022/04/14/ogtjnAzKZOWxwaC.png" class="storage-img">
+        </image>
+        <view class="title">
+        过期胶水
+        </view>
+</view>
+</view>
+<view class="secondLine">
+<view class="inventory">
+    <navigator url="/pages/authentication/authentication">
+    <image src="https://i.loli.net/2021/05/10/O7KHgb15DMQtpNw.png" class="storage-img">
+        </image>
+        <view class="title">
+        权限审批
+        </view>
+    </navigator>
+</view>
+<view class="inventory1">
+    <!-- <navigator url="/pages/recover/recover">
+    <image src="https://i.loli.net/2021/05/10/mtj9BQlr3RLeDV8.png" class="storage-img">
+        </image>
+        <view class="title">
+        废胶回收
+        </view>
+    </navigator> -->
+</view>
+</view>
+</view>
+
+
+

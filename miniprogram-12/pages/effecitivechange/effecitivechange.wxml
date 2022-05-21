@@ -1,0 +1,25 @@
+<view class="title1">
+    <view class="subtitle1">
+        型号选择
+    </view>
+    <view class="subtitle2">
+        有效期
+    </view>
+</view>
+<view class="content1">
+    <view class="subcontent" >
+        <view class="searchcube"  >
+        {{gluecode}}
+    </view>
+  </view>
+  <picker mode="date" value="{effectiveDate}}" bindchange="bindDateChange2" >
+    <view class="subcontent" >
+      {{effectiveDate}}
+    </view>
+     </picker>
+</view>
+<view class='authbtn'>
+<view  class='btn'  catchtap="changebtn" >确认更改</view>
+</view>
+
+

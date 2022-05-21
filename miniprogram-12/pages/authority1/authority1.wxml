@@ -1,0 +1,52 @@
+<!--pages/auth/auth.wxml-->
+<view class="authpage">
+<view class="mainbox">
+<view class="registerbox" wx:if = '{{!logonUserInfo}}' >
+
+<view class="titlebox">
+  <view class="nameTitle">
+    <view>姓</view><view>名：</view> 
+  </view>
+  <view class="registerName">
+  <input type="text"  bindinput="employeeName" placeholder="请输入姓名"></input>
+</view>
+</view>
+<view class="titlebox">
+  <view class="nameTitle">
+    <view>工</view><view>号：</view> 
+  </view>
+  <view class="registerName">
+  <input type="text"  bindinput="employeeId" placeholder="请输入工号"></input>
+</view>
+</view>
+<view class="titlebox">
+  <view class="nameTitle">
+    <view>工</view><view>段：</view> 
+  </view>
+  <view class="registerName">
+  <!-- <input type="text"  bindinput="userArea" placeholder="请选择工段"></input> -->
+  <view class='top-selected' bindtap='bindShowMsg' style="color:{{font_color}};">
+     <text>{{userArea}}</text>
+     <!-- <image src='https://i.loli.net/2021/02/04/rOVJZ4vk1hCXl23.png'></image> -->
+    </view>
+    <view class="select_box" wx:if="{{select}}">
+     <view wx:for="{{areas}}" wx:key="unique">
+      <view class="select_one" bindtap="mySelect" data-name="{{item}}">{{item}}</view>
+     </view>
+    </view>
+</view>
+</view>
+
+<view class='authbtn'>
+<view  class='btn'  catchtap="login" >授权注册</view>
+</view>
+</view>
+<cover-view class="infobox" wx:if = '{{logonUserInfo}}'>
+<cover-image class='infoimage'src= "{{infoimage}}" ></cover-image>
+<cover-view class="hello">你好,{{nickName}}</cover-view>
+<cover-view class="authwait" >
+  请耐心等待审核通过
+</cover-view>
+</cover-view>
+</view>
+</view>

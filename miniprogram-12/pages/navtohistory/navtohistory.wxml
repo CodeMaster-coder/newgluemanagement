@@ -1,0 +1,26 @@
+<!--pages/auth/auth.wxml-->
+<view class="authpage">
+<view class="mainbox">
+<view class="registerbox" wx:if = '{{!logonUserInfo}}' >
+
+
+<view class="titlebox">
+  <view class="nameTitle">
+    <view>胶</view><view>水</view> <view>编</view><view>号：</view>
+  </view>
+  <view class="registerName">
+  <input type="number"   bindinput="employeeId" placeholder="请输入胶水编号"></input>
+</view>
+<view class='scan'>
+<view  class='scancode'  catchtap="scancode" >扫码</view>
+</view>
+</view>
+
+
+<view class='authbtn'>
+<view  class='btn'  catchtap="navibtn" >领用更换回收</view>
+</view>
+</view>
+
+</view>
+</view>

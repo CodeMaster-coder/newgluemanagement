@@ -1,0 +1,279 @@
+<!--pages/weldparameter/weldparameter.wxml-->
+<!--主框-->
+
+<view class="basicInfoTitle" >
+    胶水基本信息
+</view>
+<view class='top'>
+    <view class='top-text'>胶水编号：</view>
+    <view class='top-selected1' >
+     <text>{{gluecode}}</text> 
+    </view>
+  </view>
+  <view class='top'>
+    <view class='top-text'>胶水型号：</view>
+    <view class='top-selected1'>
+     <text>{{model}}</text>
+    </view>
+  </view>
+  <view class='top'>
+    <view class='top-text'>生产日期：</view>
+    <view class='top-selected1'>
+     <text>{{productDate}}</text>
+    </view>
+
+  </view>
+  <view class='top'>
+    <view class='top-text'>有效日期：</view>
+    <view class='top-selected1'>
+     <text>{{effectiveDate}}</text>
+    </view>
+  </view>
+  <view class='top'>
+    <view class='top-text'>凭证号码：</view>
+    <view class='top-selected1' >
+     <text>{{voucher}}</text>
+    </view>
+  </view>
+  <view class='top'>
+    <view class='top-text'>入库日期：</view>
+    <view class='top-selected1'  >
+     <text>{{inventoryDate}}</text>
+    </view>
+  </view>
+ 
+  <!--领用-->
+
+<view wx:if="{{!collectDate}}">
+  <view class="basicInfoTitle" hover-class="none" hover-stop-propagation="false">
+    胶水领用信息
+</view>
+<view class='top'>
+  <view class='top-text'>领用班次：</view>
+    <view class='top-selected' bindtap='bancioptions' >
+     <view wx:if = "{{lingyongbanci}}"><text>{{lingyongbanci}}</text></view>
+     <image src='https://i.loli.net/2021/06/03/KtpH1D8dhjxXsfe.png'></image>
+     <cover-view class='showbox' wx:if="{{click}}">
+     <cover-view wx:for="{{banci}}" wx:key="unique">
+     <cover-view class="selected" bindtap="cselectedone" data-name ='{{item}}'>{{item}}</cover-view>
+     </cover-view>
+     </cover-view>
+    </view>
+  </view>
+  <view class='top'>
+  <view class='top-text'>领用工段：</view>
+    <view class='top-selected' bindtap='areaoptions' >
+     <view wx:if = "{{userSection}}"><text>{{userSection}}</text></view>
+     <image src='https://i.loli.net/2021/06/03/KtpH1D8dhjxXsfe.png'></image>
+     <cover-view class='showbox' wx:if="{{click1}}">
+     <cover-view wx:for="{{area}}" wx:key="unique">
+     <cover-view class="selected" bindtap="cselectedtwo" data-name ='{{item}}'>{{item}}</cover-view>
+     </cover-view>
+     </cover-view>
+    </view>
+  </view>
+<cover-view class="editButton" wx:if="{{lingyongshow}}">
+    <cover-view class="btn" bindtap = 'collectGlue'>
+        领用
+    </cover-view>
+</cover-view>
+</view>
+
+<view wx:if="{{collectDate}}">
+  <view class="basicInfoTitle" hover-class="none" hover-stop-propagation="false">
+    胶水领用信息
+</view>
+  <view class='top'>
+    <view class='top-text'>领用班次：</view>
+    <view class='top-selected1'>
+     <text>{{lingyongbanci}}</text>
+    </view>
+  </view>
+  <view class='top'>
+    <view class='top-text'>领用工段：</view>
+    <view class='top-selected1'>
+     <text>{{userSection}}</text>
+    </view>
+  </view>
+  <view class='top'>
+    <view class='top-text'>领用日期：</view>
+    <view class='top-selected1'>
+     <text>{{collectDate}}</text>
+    </view>
+  </view>
+  
+  <view class='top'>
+    <view class='top-text'>领用人：</view>
+    <view class='top-selected1'>
+     <text>{{collectPerson}}</text>
+    </view>
+  </view>
+</view>
+
+<!--更换-->
+
+<view wx:if="{{!exchangeDate & collectDate != null}}">
+  <view class="basicInfoTitle" hover-class="none" hover-stop-propagation="false">
+    胶水更换信息
+</view>
+<view class='top'>
+  <view class='top-text'>更换班次：</view>
+    <view class='top-selected' bindtap='bancioptions' >
+     <view wx:if = "{{exchangebanci}}"><text>{{exchangebanci}}</text></view>
+     <image src='https://i.loli.net/2021/06/03/KtpH1D8dhjxXsfe.png'></image>
+     <cover-view class='showbox' wx:if="{{click}}">
+     <cover-view wx:for="{{banci}}" wx:key="unique">
+     <cover-view class="selected" bindtap="selectedone" data-name ='{{item}}'>{{item}}</cover-view>
+     </cover-view>
+     </cover-view>
+    </view>
+  </view>
+  <view class='top'>
+  <view class='top-text'>更换工段：</view>
+    <view class='top-selected' bindtap='areaoptions' >
+     <view wx:if = "{{exchangeSection}}"><text>{{exchangeSection}}</text></view>
+     <image src='https://i.loli.net/2021/06/03/KtpH1D8dhjxXsfe.png'></image>
+     <cover-view class='showbox' wx:if="{{click1}}">
+     <cover-view wx:for="{{area}}" wx:key="unique">
+     <cover-view class="selected" bindtap="selectedtwo" data-name ='{{item}}'>{{item}}</cover-view>
+     </cover-view>
+     </cover-view>
+    </view>
+  </view>
+  <view class='top'>
+  <view class='top-text'>更换班组：</view>
+    <view class='top-selected' bindtap='subareaoptions' >
+     <view wx:if = "{{exchangeArea}}"><text>{{exchangeArea}}</text></view>
+     <image src='https://i.loli.net/2021/06/03/KtpH1D8dhjxXsfe.png'></image>
+     <cover-view class='showbox' wx:if="{{click2}}">
+     <cover-view wx:for="{{subarea}}" wx:key="unique">
+     <cover-view class="selected" bindtap="selectedthr" data-name ='{{item}}'>{{item}}</cover-view>
+     </cover-view>
+     </cover-view>
+    </view>
+  </view>
+  <view class='top'>
+  <view class='top-text'>更换工位：</view>
+    <view class='top-selected' bindtap='exchangeRobot' >
+     <view wx:if = "{{exchangeRobot}}"><text>{{exchangeRobot}}</text></view>
+     <image src='https://i.loli.net/2021/06/03/KtpH1D8dhjxXsfe.png'></image>
+     <cover-view class='showbox' wx:if="{{click3}}">
+     <cover-view wx:for="{{robots}}" wx:key="unique">
+     <cover-view class="selected" bindtap="selectedfou" data-name ='{{item}}'>{{item}}</cover-view>
+     </cover-view>
+     </cover-view>
+    </view>
+  </view>
+<cover-view class="editButton" wx:if="{{exchangeshow}}">
+    <cover-view class="btn" bindtap = 'exchangeGlue'>
+        更换
+    </cover-view>
+</cover-view>
+</view>
+
+<view wx:if="{{exchangeDate}}">
+  <view class="basicInfoTitle" hover-class="none" hover-stop-propagation="false">
+    胶水更换信息
+</view>
+  <view class='top'>
+    <view class='top-text'>更换班次：</view>
+    <view class='top-selected1'>
+     <text>{{exchangebanci}}</text>
+    </view>
+  </view>
+  <view class='top'>
+    <view class='top-text'>更换工段：</view>
+    <view class='top-selected1'>
+     <text>{{exchangeSection}}</text>
+    </view>
+  </view>
+  <view class='top'>
+    <view class='top-text'>更换班组：</view>
+    <view class='top-selected1'>
+     <text>{{exchangeArea}}</text>
+    </view>
+  </view>
+
+  <view class='top'>
+    <view class='top-text'>更换工位：</view>
+    <view class='top-selected1'>
+     <text>{{exchangeRobot}}</text>
+    </view>
+  </view>
+
+  <view class='top'>
+    <view class='top-text'>更换日期：</view>
+    <view class='top-selected1'>
+     <text>{{exchangeDate}}</text>
+    </view>
+  </view>
+  
+  <view class='top'>
+    <view class='top-text'>更换人：</view>
+    <view class='top-selected1'>
+     <text>{{exchangePerson}}</text>
+    </view>
+  </view>
+</view>
+
+<!--回收-->
+
+<view wx:if="{{!recoverDate & collectDate != null & exchangeDate != null}}">
+  <view class="basicInfoTitle" hover-class="none" hover-stop-propagation="false">
+    胶水回收信息
+</view>
+<view class='top'>
+  <view class='top-text'>回收班次：</view>
+    <view class='top-selected' bindtap='bancioptions' >
+     <view wx:if = "{{recoverbanci}}"><text>{{recoverbanci}}</text></view>
+     <image src='https://i.loli.net/2021/06/03/KtpH1D8dhjxXsfe.png'></image>
+     <cover-view class='showbox' wx:if="{{click}}">
+     <cover-view wx:for="{{banci}}" wx:key="unique">
+     <cover-view class="selected" bindtap="rselectedone" data-name ='{{item}}'>{{item}}</cover-view>
+     </cover-view>
+     </cover-view>
+    </view>
+  </view>
+  <view class='top'>
+    <view class='top-text'>回收重量(Kg)：</view>
+    <view class='top-selected2'  >
+     <input  type="digit" value="{{recoverWeight}}"  bindinput="recoverWeight"></input>
+    </view>
+  </view>
+  
+<cover-view class="editButton" wx:if="{{exchangeshow}}">
+    <cover-view class="btn" bindtap = 'recoverGlue'>
+        回收
+    </cover-view>
+</cover-view>
+</view>
+
+<view wx:if="{{recoverDate}}">
+  <view class="basicInfoTitle" hover-class="none" hover-stop-propagation="false">
+    胶水回收信息
+</view>
+  <view class='top'>
+    <view class='top-text'>回收班次：</view>
+    <view class='top-selected1'>
+     <text>{{recoverbanci}}</text>
+    </view>
+  </view>
+  <view class='top'>
+    <view class='top-text'>回收重量（Kg）：</view>
+    <view class='top-selected1'>
+     <text>{{recoverWeight}}</text>
+    </view>
+  </view>
+  <view class='top'>
+    <view class='top-text'>回收日期：</view>
+    <view class='top-selected1'>
+     <text>{{recoverDate}}</text>
+    </view>
+  </view>
+  <view class='top'>
+    <view class='top-text'>回收人：</view>
+    <view class='top-selected1'>
+     <text>{{recoverPerson}}</text>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,70 @@
+<!--pages/routineexam/routineexam.wxml-->
+<watermark></watermark>
+<view wx:for="{{spot}}" wx:key = 'unique'>
+<view class="linebox">
+<view class="spotnumber">
+<view class="subspotnumber">胶水编号:</view>
+<view>{{item.gluecode}}</view>
+</view>
+<view class="detailinfo">
+<view class="title">
+<view class="gun"><view>序</view><view>号:</view></view>
+<view class="gun"><view>型</view><view>号:</view></view>
+<view class="gun"><view>生</view><view>产</view><view>日</view><view>期:</view></view>
+<view class="gun"><view>有</view><view>效</view><view>日</view><view>期:</view></view>
+<view class="gun"><view>凭</view><view>证</view><view>号</view><view>码:</view></view>
+<view class="gun"><view>入</view><view>库</view><view>日</view><view>期:</view></view>
+<view class="gun"><view>领</view><view>用</view><view>班</view><view>次:</view></view>
+<view class="gun"><view>领</view><view>用</view><view>区</view><view>域:</view></view>
+<view class="gun"><view>领</view><view>用</view><view>日</view><view>期:</view></view>
+
+</view>
+<view class="content1">
+  <view class="subcontent">{{item.id}}</view>
+<view class="subcontent">{{item.model}}</view>
+<view class="subcontent">{{item.productDate}}</view>
+<view class="subcontent">{{item.effectiveDate}}</view>
+<view class="subcontent">{{item.voucher}}</view>
+<view class="subcontent">{{item.inventoryDate}}</view>
+<view class="subcontent">{{item.lingyongbanci}}</view>
+<view class="subcontent">{{item.userSection}}</view>
+<view class="subcontent">{{item.collectDate}}</view>
+
+
+</view>
+
+<view>
+<view class="rightside">
+<view class="title">
+  <view class="gun"><view>领</view><view>用</view><view>人：</view></view>
+<view class="gun"><view>更</view><view>换</view><view>班</view><view>次：</view></view>
+<view class="gun"><view>更</view><view>换</view><view>区</view><view>域:</view></view>
+<view class="gun"><view>更</view><view>换</view><view>班</view><view>组:</view></view>
+<view class="gun"><view>更</view><view>换</view><view>工</view><view>位：</view></view>
+<view class="gun"><view>更</view><view>换</view><view>人：</view></view>
+<view class="gun"><view>更</view><view>换</view><view>日</view><view>期:</view></view>
+<view class="gun"><view>过</view><view>期</view><view>时</view><view>间:</view></view>
+
+</view>
+<view class="content">
+  <view class="subcontent">{{item.collectPerson}}</view>
+  <view class="subcontent">{{item.exchangebanci}}</view>
+<view class="subcontent">{{item.exchangeSection}}</view>
+<view class="subcontent1">{{item.exchangeArea}}</view>
+<view class="subcontent">{{item.exchangeRobot}}</view>
+<view class="subcontent">{{item.exchangePerson}}</view>
+<view class="subcontent">{{item.exchangeDate}}</view>
+<view class="subcontent">{{item.overduetime}}</view>
+
+</view>
+</view>
+</view>
+
+</view>
+
+</view>
+
+</view>
+<view class='authbtn'>
+<view  class='btn'  catchtap="navibtn" >跳转更改</view>
+</view>

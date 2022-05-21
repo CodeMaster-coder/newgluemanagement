@@ -1,0 +1,95 @@
+/* pages/routineexam/routineexam.wxss */
+.linebox{
+  width: 100%;
+  height:420rpx;
+  border-top:3rpx solid  	#D3D3D3;
+  border-bottom:3rpx solid  	#D3D3D3;
+  margin-bottom: 10rpx;
+  background-color: #f4f6f8;
+}
+.spotnumber{
+  width: 100%;
+  height: 60rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.subspotnumber{
+  font-size: 28rpx;
+  color:  	#A9A9A9;
+}
+.detailinfo{
+  display: flex;
+  flex-direction: row;
+  font-size: 27rpx;
+}
+.title{
+  width: 150rpx;
+  margin-left:10rpx;
+  margin-top: 10rpx;
+  font-size: 25rpx;
+  color: 	#A9A9A9;
+}
+.gun{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 6rpx;
+}
+.content{
+  margin-top: 10rpx;
+  margin-left: 5rpx;
+
+}
+.content1{
+  margin-top: 10rpx;
+  margin-left: 5rpx;
+
+}
+.subcontent{
+  margin-bottom: 6rpx;
+  font-size: 25rpx;
+}
+.subcontent1{
+  margin-bottom: 6rpx;
+  font-size: 25rpx;
+overflow: hidden; 
+text-overflow: ellipsis; 
+white-space: nowrap;
+width: 130rpx;
+
+  
+}
+.rightside{
+  display: flex;
+  flex-direction: row;
+}
+.certainbtn{
+  margin-top: 10rpx;
+  margin-left: 100rpx; 
+  width: 200rpx;
+  height: 60rpx;
+  background-color: #00BFFF;
+  text-align: center;
+  line-height: 60rpx;
+  font-size: 35rpx;
+  border-radius: 60rpx;
+}
+.authbtn{
+  margin-top: 30rpx;
+  display: flex;
+  justify-content: center;
+
+}
+.btn{
+  text-align: center;
+  width: 200rpx;
+  height: 70rpx;
+  background-color: #00BFFF;
+  line-height: 70rpx;
+  border-radius: 70rpx;
+}
+
+
+

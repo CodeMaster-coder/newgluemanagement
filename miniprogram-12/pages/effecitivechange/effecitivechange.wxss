@@ -1,0 +1,56 @@
+/* pages/effecitivechange/effecitivechange.wxss */
+.title1{
+  display: flex;
+}
+.subtitle1{ 
+  width: 160rpx;
+  height: 45rpx;
+  text-align: center;
+  line-height: 50rpx;
+
+  border:3rpx solid black;
+  border-radius: 10rpx;
+  margin-left: 112rpx;
+  margin-top: 20rpx;
+  font-size: 30rpx;
+}
+.subtitle2{
+  width: 160rpx;
+  height: 45rpx;
+  text-align: center;
+  line-height: 50rpx;
+
+  border:3rpx solid black;
+  border-radius: 10rpx;
+  margin-left: 175rpx;
+  margin-top: 20rpx;
+  font-size: 30rpx;
+}
+.content1{
+  display: flex;
+}
+.subcontent{
+  width: 300rpx;
+  height: 60rpx;
+
+  border:3rpx solid#66CCFF;
+  border-radius: 20rpx;
+  margin-top: 10rpx;
+  margin-left: 36rpx;
+  text-align: center;
+  line-height: 60rpx;
+}
+.authbtn{
+  margin-top: 30rpx;
+  display: flex;
+  justify-content: center;
+
+}
+.btn{
+  text-align: center;
+  width: 200rpx;
+  height: 70rpx;
+  background-color: #00BFFF;
+  line-height: 70rpx;
+  border-radius: 70rpx;
+}

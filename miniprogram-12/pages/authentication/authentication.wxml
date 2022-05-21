@@ -1,0 +1,38 @@
+<!--pages/authentication/authentication.wxml-->
+
+<watermark></watermark>
+<cover-view class="list" wx:for="{{user}}"   wx:key = 'unique' >
+  <cover-view class="linebox">
+  <cover-view class = 'wxinfo'>
+  <!-- <cover-view class="imagebox">
+  <cover-image class="wximage"  src = '{{item.avatarUrl}}'></cover-image>
+  </cover-view> -->
+<cover-view class='textinfo'>
+<cover-view class="nickname">
+<cover-view class="nicknametitle">工段:</cover-view>
+<cover-view>{{item.userArea}}</cover-view>
+</cover-view>
+<cover-view class="nickname">
+<cover-view class="nicknametitle">工号:</cover-view>
+<cover-view>{{item.employeeId}}</cover-view>
+</cover-view>
+<cover-view class="nickname">
+<cover-view class="nicknametitle">姓名:</cover-view>
+<cover-view>{{item.employeeName}}</cover-view>
+</cover-view>
+</cover-view>
+</cover-view>
+<cover-view class="examine" >
+<cover-view class="middleauthority" data-index="{{index}}" bindtap="middleauth">
+高级权限
+</cover-view>
+<cover-view class="middleauthority" data-index="{{index}}" bindtap="lowauth">
+低级权限
+</cover-view>
+<cover-view class="middleauthority" data-index="{{index}}" bindtap="noneauth">
+不予通过
+</cover-view>
+</cover-view>
+
+</cover-view>
+</cover-view>
